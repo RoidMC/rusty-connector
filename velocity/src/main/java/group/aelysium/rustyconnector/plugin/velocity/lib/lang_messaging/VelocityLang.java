@@ -384,72 +384,72 @@ public interface VelocityLang extends Lang {
 
     Message TPA_USAGE = () -> join(
             Lang.newlines(),
-            text("Usage: /tpa <<username>, deny, accept>",RED)
+            text("用法: /tpa <<username>, deny, accept>",RED)
     );
     Message TPA_DENY_USAGE = () -> join(
             Lang.newlines(),
-            text("Usage: /tpa deny <username>",RED),
-            text("Deny a tpa request from a user.",GRAY)
+            text("用法: /tpa deny <username>",RED),
+            text("注: 用于拒绝来自玩家的tpa请求",GRAY)
     );
     Message TPA_ACCEPT_USAGE = () -> join(
             Lang.newlines(),
-            text("Usage: /tpa accept <username>",RED),
-            text("Accept a tpa request from a user.",GRAY)
+            text("用法: /tpa accept <username>",RED),
+            text("注: 用于接受来自玩家的tpa请求",GRAY)
     );
 
     ParameterizedMessage1<String> TPA_FAILURE = username -> join(
             Lang.newlines(),
-            text("Unable to tpa to "+username+"!",RED)
+            text("无法向玩家 "+username+" 发起tpa请求!",RED)
     );
     ParameterizedMessage1<String> TPA_FAILURE_TARGET = username -> join(
             Lang.newlines(),
-            text("Unable to tpa "+username+" to you!",RED)
+            text("无法将玩家 "+username+" tpa传送至您的身旁!",RED)
     );
-    Component TPA_FAILURE_SELF_TP = text("You can't teleport to yourself!",RED);
+    Component TPA_FAILURE_SELF_TP = text("你不能对自己发起tpa传送请求!",RED);
     ParameterizedMessage1<String> TPA_FAILURE_NO_USERNAME = username -> join(
             Lang.newlines(),
-            text(username+" isn't online!",RED)
+            text("玩家 "+username+" 不在线!",RED)
     );
     ParameterizedMessage1<String> TPA_FAILURE_NO_REQUEST = username -> join(
             Lang.newlines(),
-            text(username+" hasn't sent you any recent tpa requests!",RED)
+            text("玩家 "+username+" 最近没有向您发送任何tpa请求!",RED)
     );
     ParameterizedMessage1<String> TPA_REQUEST_DUPLICATE = username -> join(
             Lang.newlines(),
-            text("You already have a pending tpa request to "+ username +"!",RED)
+            text("你已发起了针对玩家 "+ username +" 的tpa传送请求, 请等待请求过期或该玩家处理该请求!",RED)
     );
     ParameterizedMessage1<String> TPA_REQUEST_QUERY = username -> join(
             Lang.newlines(),
-            text(username + " has requested to teleport to you!",GOLD),
-            text("Use `",GRAY).append(Component.text("/tpa accept "+username,AQUA)).append(Component.text("` to accept!", GRAY)),
-            text("Use `",GRAY).append(Component.text("/tpa deny "+username,AQUA)).append(Component.text("` to deny!", GRAY))
+            text("玩家 " + username + " 向你发起了tpa传送请求!",GOLD),
+            text("使用 ",GRAY).append(Component.text("/tpa accept "+username,AQUA)).append(Component.text("` 可接受tpa传送请求!", GRAY)),
+            text("使用 ",GRAY).append(Component.text("/tpa deny "+username,AQUA)).append(Component.text("` 可拒绝tpa传送请求!", GRAY))
     );
     ParameterizedMessage1<String> TPA_REQUEST_SUBMISSION = username -> join(
             Lang.newlines(),
-            text("You requested to teleport to "+ username +"!",GREEN)
+            text("你已向玩家" + username + "发起了tpa传送请求!",GREEN)
     );
     ParameterizedMessage1<String> TPA_REQUEST_ACCEPTED_SENDER = username -> join(
             Lang.newlines(),
-            text(username +" accepted your request!",GREEN),
-            text("Attempting to teleport...",GRAY)
+            text("玩家 "+ username +" 同意了你发起的tpa传送请求!",GREEN),
+            text("正在尝试传送, 请稍后...",GRAY)
     );
     ParameterizedMessage1<String> TPA_REQUEST_ACCEPTED_TARGET = username -> join(
             Lang.newlines(),
-            text(username +"'s tpa request has been accepted!",GREEN),
-            text("Attempting to teleport...",GRAY)
+            text("你同意了玩家 "+ username +" 发起的tpa传送请求!",GREEN),
+            text("正在尝试将该玩家传送至您的位置...",GRAY)
     );
     ParameterizedMessage1<String> TPA_REQUEST_DENIED_SENDER = username -> join(
             Lang.newlines(),
-            text(username +" denied your request!",RED)
+            text("玩家 "+ username +" 拒绝了你发起的tpa传送请求!",RED)
     );
     ParameterizedMessage1<String> TPA_REQUEST_DENIED_TARGET = username -> join(
             Lang.newlines(),
-            text(username +"'s tpa request has been denied!",RED),
-            text("They've been notified...",GRAY)
+            text("你已成功拒绝了玩家 "+ username +" 发起的tpa传送请求!",RED),
+            text("该玩家将会收到拒绝传送通知...",GRAY)
     );
     ParameterizedMessage1<String> TPA_REQUEST_EXPIRED = username -> join(
             Lang.newlines(),
-            text("Your tpa request to "+username+" has expired!",RED)
+            text("您对玩家 "+username+" 发起的tpa传送请求已过期!",RED)
     );
 
     ParameterizedMessage1<ServerInfo> PONG = serverInfo -> text(
