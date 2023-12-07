@@ -33,7 +33,7 @@ jobs:
       with:
         key: ${{ runner.os }}-rcbuild-${{ hashFiles('**rustyconnector/plugin/build.gradle') }}
         path: |
-          ~/rustyconnector/plugin/.gradle/loom-cache
+          rustyconnector/plugin/.gradle/loom-cache
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
@@ -68,7 +68,7 @@ jobs:
 #      with:
 #        key: ${{ runner.os }}-wsbridge_build-${{ hashFiles('**rustyconnector/websocket-bridge/build.gradle') }}
 #        path: |
-#          ~/rustyconnector/websocket-bridge/.gradle/caches
+#          rustyconnector/websocket-bridge/.gradle/caches
 #    - name: Set up JDK 17
 #      uses: actions/setup-java@v3
 #      with:
