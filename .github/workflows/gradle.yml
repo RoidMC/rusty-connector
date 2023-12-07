@@ -33,8 +33,7 @@ jobs:
       with:
         key: ${{ runner.os }}-rcbuild-${{ hashFiles('**rustyconnector/plugin/build.gradle') }}
         path: |
-          ~/plugin/.gradle/caches
-          ~/plugin/.gradle/wrapper
+          ~rustyconnector/plugin/.gradle/loom-cache
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
