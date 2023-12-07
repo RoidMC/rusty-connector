@@ -28,7 +28,7 @@ jobs:
     - name: Cache Gradle Packages
       uses: actions/cache@v3
       with:
-        key: ${{ runner.os }}-rcbuild-${{ hashFiles('**rustyconnector/plugin/build.gradle') }}
+        key: ${{ runner.os }}-rcbuild-${{ hashFiles('**rustyconnector/plugin/gradle.properties') }}
         path: |
           rustyconnector/plugin/.gradle/loom-cache
     - name: Set up JDK 17
